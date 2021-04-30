@@ -1,0 +1,129 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*===============*/
+
+
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+table {
+    background-color: transparent;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+/********/
+
+h2, .h2 {
+    font-size: 30px;
+    color: #08bacc;
+}
+
+
+.navbar-inverse {
+    background-color: #08bacc;
+    border-color: #08bacc;
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #f5f5f5;
+    font-size: 20px;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #f5f5f5;
+    }
+
+
+    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+        color: #073e4e;
+        font-weight: bold;
+        background-color: transparent;
+    }
+
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #073e4e;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+    color: whitesmoke;
+    background: #08bacc;
+    border-bottom-width: 2px;
+    font-size: 18px;
+}
+
+
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    font-size: 16px;
+    border-top: 1px solid #dddddd;
+}
+
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #08bacc;
+    font-size: 19px;
+}
+
+.txt_title {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    height: 42px;
+    font-size: 17px;
+}

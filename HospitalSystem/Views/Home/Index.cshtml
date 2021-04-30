@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HospitalSystem.Models.Hospital>
+@{
+    ViewBag.Title = "Hospitals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="navbar-fix-wrap-h">
+    <h2>المستشفيات</h2>
+</div>
+
+<table id="tableMovies" class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <td>المستشفى</td>
+            <td>العنوان</td>
+            <td>عدد الأسرة المتاحة</td>
+            <td>عدد أكياس الدم المتاحة</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var hospital in Model)
+        {
+        <tr class="table-light">
+            <td>@Html.ActionLink(hospital.Name, "Edit", "Hospitals", new { id = hospital.Id }, null)</td>
+            <td>@hospital.Location</td>
+            <td>@hospital.NumberOfBedsAvailable</td>
+            <td>@hospital.NumberOfBloodBags</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("مستشفى جديد", "New", "Hospitals", new { Id = 0 }, new { @class = "btn btn-lg btn-primary" })
+</div>

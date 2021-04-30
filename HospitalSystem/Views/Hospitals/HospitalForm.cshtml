@@ -1,0 +1,114 @@
+﻿@model HospitalSystem.Models.Hospital
+@{
+    ViewBag.Title = "HospitalForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titleText = (Model.Id == 0) ? "اضافة مستشفى جديد" : "تعديل المستشفى : " + @Model.Name;
+}
+
+
+<h2 class="txt_title">@titleText</h2>
+
+@using (Html.BeginForm("Save", "Hospitals", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="first-half col-md-4">
+                <div class="form-group">
+                        @Html.LabelFor(m => m.Name)
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Location)
+                        @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Coordinates)
+                        @Html.TextBoxFor(m => m.Coordinates, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Phone)
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NumberOfBeds)
+                        @Html.TextBoxFor(m => m.NumberOfBeds, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NumberOfBedsAvailable)
+                        @Html.TextBoxFor(m => m.NumberOfBedsAvailable, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NumberOfBloodBags)
+                        @Html.TextBoxFor(m => m.NumberOfBloodBags, new { @class = "form-control" })
+                    </div>
+                
+            </div>
+
+            <div class="second-half col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.A_Plus)
+                    @Html.TextBoxFor(m => m.A_Plus, new { @class = "form-control" })
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(m => m.A_Minus)
+                    @Html.TextBoxFor(m => m.A_Minus, new { @class = "form-control" })
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(m => m.B_Plus)
+                    @Html.TextBoxFor(m => m.B_Plus, new { @class = "form-control" })
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(m => m.B_Minus)
+                    @Html.TextBoxFor(m => m.B_Minus, new { @class = "form-control" })
+                </div>
+                
+                
+            </div>
+            <div class="third-half col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.AB_Plus)
+                    @Html.TextBoxFor(m => m.AB_Plus, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.AB_Minus)
+                    @Html.TextBoxFor(m => m.AB_Minus, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.O_Plus)
+                    @Html.TextBoxFor(m => m.O_Plus, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.O_Minus)
+                    @Html.TextBoxFor(m => m.O_Minus, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <input type="submit" value="حفظ" class="btn btn-primary" />
+    </div>
+    <div class="form-group">
+        @Html.ActionLink("حذف !","Delete",new{id = Model.Id},new{@class = "btn btn-danger"})
+    </div>
+
+}

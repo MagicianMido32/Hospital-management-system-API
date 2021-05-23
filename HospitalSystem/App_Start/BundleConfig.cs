@@ -8,6 +8,7 @@ namespace HospitalSystem
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleTable.EnableOptimizations = false;
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -23,7 +24,7 @@ namespace HospitalSystem
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/css/bootstrap-rtl.css",
+                      "~/Content/bootstrap-rtl.css",
                       "~/Content/site.css"));
         }
     }
